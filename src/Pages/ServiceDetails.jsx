@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { setItems } from '../Components/LocalStorage/localStorage';
+import Swal from 'sweetalert2';
 
 const ServiceDetails = () => {
     Aos.init();
@@ -21,7 +22,11 @@ const ServiceDetails = () => {
 
     const handleCart = () =>{
         setItems(idnt);
-        
+        Swal.fire(
+            'Good job!',
+            'Added to Cart!',
+            'success'
+          )
     }
     return (
         <div>

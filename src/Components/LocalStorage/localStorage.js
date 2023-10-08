@@ -9,14 +9,13 @@ const getStoredItems  = () =>{
 }
 
 
-
 const setItems = (id) =>{
     const storedItems = getStoredItems();
     const isExist = storedItems.find(cardId => cardId === id);
 
     if(!isExist){
         storedItems.push(id);
-        localStorage.setItem('cart', storedItems);
+        localStorage.setItem('cart', JSON.stringify(storedItems));
     }
 }
 

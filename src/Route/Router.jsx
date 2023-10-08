@@ -7,8 +7,8 @@ import Login from '../Pages/Login';
 import Registration from '../Pages/Registration';
 import PrivateRoute from './PrivateRoute';
 import ServiceDetails from '../Pages/ServiceDetails';
-import Services from '../Components/Services/Services';
 import ErrorPage from '../Pages/ErrorPage';
+import Cart from '../Pages/Cart';
 
 
 const router = createBrowserRouter([
@@ -35,6 +35,11 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: () => fetch('/public/details.json')
             },
+            {
+                path: '/cart',
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+                loader: () => fetch('/public/details.json')
+            }
             
         ]
     }
