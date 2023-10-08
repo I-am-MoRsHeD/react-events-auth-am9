@@ -1,0 +1,47 @@
+
+
+[
+    {
+      "id": 1,
+      "title": "Wedding Ceremony",
+      "image_url": "https://i.ibb.co/r4fpKCy/wedding.jpg",
+      "desc": "Wedding has come in our life one time and give us much pleasure.If a wedding arrangment do not arrange in a sweet and gorgeous way,it is very disappointed and unhappy.In that case we are giving you a chance to enjoy your wedding day in a gorgeous way and pass your time through a memorable way.In the home page,you can see how our customer get service from us and they said this in their reviews.Hope we also give you our best support.",
+      "price": 1099
+    },
+    {
+      "id": 2,
+      "title": "Birthday Party",
+      "image_url": "https://i.ibb.co/jkDmP9m/birthday-party.jpg",
+      "desc": "Birthday is special for everyone in the world.In this special day,we are not disappoint you.We are providing you a beautiful moment on this day in a reasonable price.In the home page,you can see how our customer get service from us and they said this in their reviews.Hope we also give you our best support.",
+      "price": 599
+    },
+    {
+      "id": 3,
+      "title": "Engagement Party",
+      "image_url": "https://i.ibb.co/z8NbFFr/engagement.jpg",
+      "desc": "Engagement is first step to engage someone in your life for permament.It is a very enjoyable and happy moment for all of us.We all want that our engagement moment will always be remembered in our life.So for this we are giving you a chance to enjoy your engagement day in a awesome way.In the home page,you can see how our customer get service from us and they said this in their reviews.Hope we also give you our best support.",
+      "price": 799
+    },
+    {
+      "id": 4,
+      "title": "Reception Ceremony",
+      "image_url": "https://i.ibb.co/D9fcycQ/reception.jpg",
+      "desc": "Reception party helds after marriage.It is very populer in Islam.It also a religious section in islam and also a memorable day specially for Bride&Groom.So for this we are giving you a chance to enjoy your reception day in a awesome way.In the home page,you can see how our customer get service from us and they said this in their reviews.Hope we also give you our best support.",
+      "price": 799
+    },
+    {
+      "id": 5,
+      "title": "Holiday Party",
+      "image_url": "https://i.ibb.co/Hdx0Rzh/holiday.jpg",
+      "desc": "After passing those pressured days,we all have a holiday.In this we can enjoy this day in such a awesome way.For this we feel free and refresh our mind.So for this we are giving you a chance to enjoy your reception day in a awesome way.In the home page,you can see how our customer get service from us and they said this in their reviews.Hope we also give you our best support.",
+      "price": 399
+    },
+    {
+      "id": 6,
+      "title": "Retirement Party",
+      "image_url": "https://i.ibb.co/8PFTfXV/retirement.jpg",
+      "desc": "Retirement day is such a painful day for us.In the work time,we had a lot of calleagues.We had to say goodbye to them in this day.But we are here to surprise you and making your day happy in this situation.So for this we are giving you a chance to enjoy your retirement day in a awesome way and be happy with your friends.In the home page,you can see how our customer get service from us and they said this in their reviews.Hope we also give you our best support.",
+      "price": 899
+    }
+  ]
+  
