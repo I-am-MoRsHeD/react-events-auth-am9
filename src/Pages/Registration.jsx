@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import { AuthContext } from '../Components/AuthProvider/AuthProvider';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { updateProfile } from 'firebase/auth';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
     const { createUser, googlePopup } = useContext(AuthContext);
@@ -41,7 +42,10 @@ const Registration = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
-                setSuccess('User set successfully')
+                Swal.fire(
+                    'Successfully created user!',
+                    'success'
+                  )
 
                 // updating profile
                 updateProfile(result.user, {

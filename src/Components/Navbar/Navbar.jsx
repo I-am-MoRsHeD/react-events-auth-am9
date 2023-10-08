@@ -22,10 +22,10 @@ const Navbar = () => {
     const navlinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/about'>About Us</NavLink></li>
-        <>
+        { user && <>
         <li><NavLink to='/cart'>Cart</NavLink></li>
         <li><NavLink to='/p2'>p2</NavLink></li>
-        </>
+        </>}
     </>
     return (
         <div>

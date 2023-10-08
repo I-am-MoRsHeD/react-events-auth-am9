@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar/Navbar';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Components/AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const {signUser, googlePopup} = useContext(AuthContext);
@@ -42,7 +43,10 @@ const Login = () => {
         signUser(email, password)
         .then(result =>{
             console.log(result.user)
-            setSuccess('User logged in successfully')
+            Swal.fire(
+                'Successfully logged in!',
+                'success'
+              )
             navigate(location?.state ? location.state : '/')
 
         })
