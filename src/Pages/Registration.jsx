@@ -3,16 +3,16 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar/Navbar';
 import { AuthContext } from '../Components/AuthProvider/AuthProvider';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
-    const {createUser} = useContext(AuthContext);
+    const { createUser, googlePopup } = useContext(AuthContext);
     const [succes, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleRegister = e =>{
+    const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
@@ -24,45 +24,51 @@ const Registration = () => {
         setSuccess('')
         setError('')
 
-        if(password.length < 6){
+        if (password.length < 6) {
             setError('must be 6 character or above')
             return;
         }
-        else if(!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             setError("password must have a uppercase")
             return;
         }
-        else if(!/(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/.test(password)){
+        else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
             setError('password needs a special character')
             return;
         }
 
         // user create
         createUser(email, password)
-        .then(result =>{
-            console.log(result.user)
-            setSuccess('User set successfully')
+            .then(result => {
+                console.log(result.user)
+                setSuccess('User set successfully')
 
-            // updating profile
-            updateProfile(result.user,{
-                displayName: first + last, 
-                photoURL: "https://i.ibb.co/NsvjBvg/profile.jpg"
+                // updating profile
+                updateProfile(result.user, {
+                    displayName: first + last,
+                    photoURL: "https://i.ibb.co/NsvjBvg/profile.jpg"
+                })
+                    .then(() => {
+                        setSuccess('profile updated')
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+
             })
-            .then(()=>{
-                setSuccess('profile updated')
-            })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error)
             })
-
-        })
-        .catch(error =>{
-            console.log(error)
-        })
     }
 
-    const handleGoogle = () =>{
-
+    const handleGoogle = () => {
+        googlePopup()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     return (
         <div>
@@ -72,7 +78,7 @@ const Registration = () => {
                     <h2 className="text-4xl font-bold pl-10 mt-10">Create an account</h2>
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control mb-6 border-b-2">
-                            <input type="text" name="first" placeholder="First Name" className="input"/>
+                            <input type="text" name="first" placeholder="First Name" className="input" />
                         </div>
                         <div className="form-control mb-6 border-b-2">
                             <input type="text" name="last" placeholder="Last Name" className="input" />
@@ -82,25 +88,25 @@ const Registration = () => {
                         </div>
                         <div className="form-control border-b-2">
                             <input
-                                type={showPassword ? "text" : "password"} 
+                                type={showPassword ? "text" : "password"}
                                 name="password"
                                 placeholder="Password"
                                 className="input" required />
-                                <span className='absolute mt-4 md:ml-64 lg:ml-[430px]' onClick={() => setShowPassword(!showPassword)}>
-                                    {
-                                        showPassword ? <FaEyeSlash></FaEyeSlash> :
+                            <span className='absolute mt-4 md:ml-64 lg:ml-[430px]' onClick={() => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> :
                                         <FaEye></FaEye>
-                                    }
-                                </span>
+                                }
+                            </span>
                         </div>
                         <div>
                             {
                                 succes ? <p className='text-green-600'>{succes}</p> :
-                                ''
+                                    ''
                             }
                             {
-                                error ? <p className='text-red-600'>{error}</p> : 
-                                ""
+                                error ? <p className='text-red-600'>{error}</p> :
+                                    ""
                             }
                         </div>
                         <div className="form-control">
@@ -111,12 +117,13 @@ const Registration = () => {
                         </div>
                     </form>
                 </div>
-                <div className='w-5/6 mt-8 mx-auto'>
-                    <p className='text-center'>Or</p>
-                    
-                    <div className='flex justify-start mt-2 rounded-full py-1 px-2 border border-teal-500'>
-                        <img className='w-10 md:mr-16 lg:mr-28' src="" alt="" />
-                        <button onClick={handleGoogle} className='font-semibold'>Continue with Google</button>
+                {/* PopUp componenets */}
+                <div className='w-3/4 mt-8 mx-auto'>
+                    <p className='text-center font-bold mb-5 text-2xl'>Or</p>
+                    <div className='flex justify-start mt-2 rounded-full py-1 px-2 border-2 bg-slate-600 text-white border-red-600'>
+                        <button onClick={handleGoogle} className='font-semibold p-2 flex items-center'>
+                            <span className='md:mr-9 lg:mr-24'><FaGoogle></FaGoogle></span> Continue With Google
+                        </button>
                     </div>
 
                 </div>

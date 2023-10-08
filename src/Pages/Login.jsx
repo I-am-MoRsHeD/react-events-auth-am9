@@ -34,7 +34,7 @@ const Login = () => {
             setError("Email doesn't match")
             return;
         }
-        else if(!/(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/.test(password)){
+        else if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)){
             setError("Password doesn't match")
         }
 

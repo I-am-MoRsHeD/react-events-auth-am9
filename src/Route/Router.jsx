@@ -9,6 +9,7 @@ import PrivateRoute from './PrivateRoute';
 import ServiceDetails from '../Pages/ServiceDetails';
 import ErrorPage from '../Pages/ErrorPage';
 import Cart from '../Pages/Cart';
+import About from '../Pages/About';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                 path: '/cart',
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>,
                 loader: () => fetch('/public/details.json')
+            },
+            {
+                path: '/about',
+                element: <About></About>
             }
             
         ]
