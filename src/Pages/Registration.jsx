@@ -77,7 +77,7 @@ const Registration = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='w-1/2 mx-auto my-10'>
+            <div className='lg:w-1/2 mx-auto my-10'>
                 <div className='border-2 rounded-md border-teal-500'>
                     <h2 className="text-4xl font-bold pl-10 mt-10">Create an account</h2>
                     <form onSubmit={handleRegister} className="card-body">
@@ -96,7 +96,7 @@ const Registration = () => {
                                 name="password"
                                 placeholder="Password"
                                 className="input" required />
-                            <span className='absolute mt-4 md:ml-64 lg:ml-[430px]' onClick={() => setShowPassword(!showPassword)}>
+                            <span className='absolute mt-4 ml-80 md:ml-64 lg:ml-[520px]' onClick={() => setShowPassword(!showPassword)}>
                                 {
                                     showPassword ? <FaEyeSlash></FaEyeSlash> :
                                         <FaEye></FaEye>
@@ -126,7 +126,7 @@ const Registration = () => {
                     <p className='text-center font-bold mb-5 text-2xl'>Or</p>
                     <div className='flex justify-start mt-2 rounded-full py-1 px-2 border-2 bg-slate-600 text-white border-red-600'>
                         <button onClick={handleGoogle} className='font-semibold p-2 flex items-center'>
-                            <span className='md:mr-9 lg:mr-24'><FaGoogle></FaGoogle></span> Continue With Google
+                            <span className='md:mr-9 mr-14 lg:mr-24'><FaGoogle></FaGoogle></span> Continue With Google
                         </button>
                     </div>
 

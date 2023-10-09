@@ -17,6 +17,7 @@ const Cart = () => {
             setCarts(findCart)
         }
     }, [data])
+    console.log(carts)
 
     if (loading) {
         return <div className='flex justify-center items-center h-screen'>
@@ -27,19 +28,18 @@ const Cart = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='grid grid-cols-2'>
+            <div className='grid grid-cols-1 lg:grid-cols-2'>
                 {
                     carts.map(cart =>
                         <div className='w-5/6 my-10 mx-auto shadow-xl rounded-lg' key={cart.id}>
 
                             <img className='w-full' src={cart.image_url} alt="" />
                             <div className='space-y-5 p-5'>
-                                <h2 className='text-4xl font-bold'>{cart.title}</h2>
+                                <h2 className='text-2xl lg:text-4xl font-bold'>{cart.title}</h2>
                                 <p className='text-lg'>
                                     {
                                         cart.desc.length > 130 ? <p>{cart.desc.slice(0, 130)}<span>.......</span></p> :
                                             <p>{cart.desc}</p>
-
                                     }
                                 </p>
                             </div>

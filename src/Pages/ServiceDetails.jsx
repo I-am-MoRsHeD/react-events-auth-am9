@@ -31,17 +31,17 @@ const ServiceDetails = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='bg-teal-500 p-10'>
-                <div className='flex justify-between gap-5 h-screen border-2 border-dotted border-amber-200 p-2 items-center'>
-                    <div data-aos="fade-right" className='flex-1 text-center space-y-10'>
-                        <h2 className="text-4xl font-bold">{title}</h2>
-                        <p className='text-xl'>{desc}</p>
+            <div className='bg-teal-500 overflow-x-hidden p-1 lg:p-10'>
+                <div className='lg:flex justify-between h-screen border-2 border-dotted border-amber-200 p-2 items-center'>
+                    <div data-aos="fade-right" className='flex-1 p-3 lg:p-1 text-center rounded-tl-lg rounded-bl-lg space-y-10 bg-pink-200'>
+                        <h2 className="text-lg lg:text-4xl font-bold">{title}</h2>
+                        <p className='text-md lg:text-xl'>{desc}</p>
                         <button
                         onClick={handleCart}
-                        className='bg-gray-300 w-1/2 p-2 rounded-lg hover:bg-red-500'>Add to cart: ${price}</button>
+                        className='bg-gray-300 lg:w-1/2 p-2 rounded-lg hover:bg-red-500'>Add to cart: ${price}</button>
                     </div>
-                    <div data-aos="fade-left" className='w-1/2 '>
-                        <img src={image_url} alt="" />
+                    <div data-aos="fade-left" className='lg:w-1/2 '>
+                        <img className='rounded-tr-lg  rounded-br-lg' src={image_url} alt="" />
                     </div>
                 </div>
             </div>

@@ -10,13 +10,13 @@ const About = () => {
         Aos.init({ duration: 1000, easing: 'linear' });
     }, [])
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <Navbar></Navbar>
             <div
                 style={{ height: '100vh' }}
-                className="bg-[url('https://i.ibb.co/VtH76sR/wedding-background.jpg')] bg-cover my-10">
+                className="bg-[url('https://i.ibb.co/VtH76sR/wedding-background.jpg')] bg-cover mb-10">
                 <div className='h-full w-full backdrop-brightness-50 flex justify-center items-center '>
-                    <div data-aos="fade-right" className='text-6xl font-bold text-cyan-400'>
+                    <div data-aos="fade-right" className='text-3xl lg:text-6xl font-serif font-bold text-slate-100'>
                         <h2>~ We Work For Client </h2>
                         <h2 className='ml-24 mt-2'>Not For Money ~</h2>
                     </div>
@@ -27,12 +27,12 @@ const About = () => {
             {/* about our events */}
             <div className='py-10 bg-zinc-100'>
                 <h1 className="text-5xl font-bold font-serif text-center pt-10 mb-20">Why Choose M&H Events?</h1>
-                <div className='flex items-center justify-between mx-10 gap-5'>
+                <div className='lg:flex items-center justify-between mx-3 lg:mx-10 gap-5'>
                     <div data-aos="fade-right">
                         <img className='w-[600px]' src="https://i.ibb.co/30MYrSp/event-background.jpg" alt="" />
                     </div>
-                    <div data-aos="fade-left" className='grid grid-cols-2 gap-20'>
-                        <div className='text-center w-44'>
+                    <div data-aos="fade-left" className='grid grid-cols-2 gap-6 lg:gap-20'>
+                        <div className='text-center w-10 lg:w-44'>
                             <div className='flex'>
                                 <span className='mt-2 mr-2 text-3xl'><BsArrowRightCircle></BsArrowRightCircle></span>
                                 <div>
@@ -96,22 +96,22 @@ const About = () => {
             {/* contact with use */}
             <div className='bg-zinc-100 py-10'>
                 <h2 className="text-4xl text-center font-bold font-serif">Contact With Us</h2>
-                <div className='flex justify-center gap-32 py-10 '>
+                <div className='lg:flex justify-center lg:gap-32 py-10 '>
                     <div>
-                        <h2 className='text-xl font-semibold text-cyan-500'>Email Us</h2>
-                        <p>m&hevents@yahoo.com</p>
+                        <h2 className='text-xl text-center font-semibold text-cyan-500'>Email Us</h2>
+                        <p className='text-center'>Email: m&hevents@yahoo.com</p>
                     </div>
-                    <div className='mt-32'>
-                        <h2 className='text-xl font-semibold text-cyan-500'>Give Message</h2>
-                        <div className='flex mt-5 text-2xl justify-between'>
+                    <div className='mt-8 lg:mt-32'>
+                        <h2 className='text-xl text-center font-semibold text-cyan-500'>Give Message</h2>
+                        <div className='flex mt-5 text-2xl justify-evenly lg:justify-between'>
                             <BsInstagram></BsInstagram>
                             <BsFacebook></BsFacebook>
                             <BsTwitter></BsTwitter>
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-xl font-semibold text-cyan-500'>Call Us</h2>
-                        <p>Via: 9689684683</p>
+                        <h2 className='text-xl text-center mt-10 lg:mt-0 font-semibold text-cyan-500'>Call Us</h2>
+                        <p className='text-center'>Mob: 9689684683</p>
                     </div>
                 </div>
             </div>

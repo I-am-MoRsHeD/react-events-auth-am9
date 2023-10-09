@@ -10,6 +10,7 @@ import ServiceDetails from '../Pages/ServiceDetails';
 import ErrorPage from '../Pages/ErrorPage';
 import Cart from '../Pages/Cart';
 import About from '../Pages/About';
+import WhatsNew from '../Pages/WhatsNew';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/whats',
+                element: <WhatsNew></WhatsNew>
             }
             
         ]

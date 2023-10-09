@@ -11,9 +11,9 @@ const Banner = () => {
         <div
             data-aos="fade-up"
             style={{ height: '100vh' }}
-            className="bg-[url('https://i.ibb.co/pK7dnNy/Screenshot-11.png')] bg-cover mb-10">
+            className="bg-[url('https://i.ibb.co/pK7dnNy/Screenshot-11.png')] bg-cover mb-10 overflow-x-hidden">
             <div className='h-full w-full backdrop-brightness-50 flex justify-center items-center '>
-                <div data-aos="fade-right" className='text-6xl font-bold text-orange-400'>
+                <div data-aos="fade-right" className='text-4xl md:text-6xl lg:text-6xl font-bold text-orange-400'>
                     <h2>~ Keep us in </h2>
                     <h2 className='ml-24 mt-2'>Your Thoughts ~</h2>
                 </div>

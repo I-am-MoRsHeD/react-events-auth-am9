@@ -9,11 +9,11 @@ const Events = () => {
         Aos.init();
     },[])
     return (
-        <div className=''>
-            <div data-aos="fade-down" className='border-2 border-blue-400 my-10 w-2/6 mx-auto rounded-lg'>
+        <div className='overflow-x-hidden'>
+            <div data-aos="fade-down" className='border-2 border-blue-400 my-10 w-5/6 lg:w-2/6 mx-auto rounded-lg'>
                 <h2 className='text-4xl mb-5 text-center font-bold'>Our Recent Events</h2>
             </div>
-            <div className='grid grid-cols-3 gap-5 px-16 ml-5'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 px-16 ml-5'>
                 <div data-aos="fade-right" className='main'>
                     <img className='w-80' src="https://i.ibb.co/kSQR7D9/wedding-ceremony.jpg" alt="" />
                     <div className='overlay'>

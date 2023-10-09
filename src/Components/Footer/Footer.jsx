@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 const Footer = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <footer className="footer footer-center py-20 px-10 bg-base-200 text-base-content rounded">
                 <Marquee speed={100}>
                     <div>

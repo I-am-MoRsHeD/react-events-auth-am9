@@ -2,34 +2,30 @@
 import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const Navbar = () => {
-    useEffect(()=>{
-        Aos.init({duration: 1000, easing: 'linear'});
-    },[])
+
     const { user, logoutUser } = useContext(AuthContext);
 
-    const handleLogout = () =>{
+    const handleLogout = () => {
         logoutUser()
-        .then()
-        .catch(error=>{
-            console.log(error)
-        })
+            .then()
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     const navlinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/about'>About Us</NavLink></li>
-        { user && <>
-        <li><NavLink to='/cart'>Cart</NavLink></li>
-        <li><NavLink to='/p2'>p2</NavLink></li>
+        {user && <>
+            <li><NavLink to='/cart'>Cart</NavLink></li>
+            <li><NavLink to='/whats'>WhatsNew</NavLink></li>
         </>}
     </>
     return (
-        <div>
-            <div data-aos="fade-down" className="navbar bg-stone-200 shadow-xl rounded-lg">
+        <div className=''>
+            <div className="navbar bg-base-100 shadow-xl rounded-lg">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,7 +35,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">M&H Events</a>
+                    <a className=""><img className='w-44 ml-1 rounded-lg' src="https://i.ibb.co/7p4rqRR/Screenshot-16.png" alt="" /></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

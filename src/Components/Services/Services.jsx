@@ -12,7 +12,7 @@ const Services = ({ data }) => {
     const { id, title, image_url, price, desc } = data;
 
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <div data-aos="fade-up"
                 className="card bg-base-100 shadow-xl">
                 <figure><img
