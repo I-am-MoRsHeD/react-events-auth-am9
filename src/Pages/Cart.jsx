@@ -8,7 +8,7 @@ import Navbar from '../Components/Navbar/Navbar';
 const Cart = () => {
     const { loading } = useContext(AuthContext);
     const data = useLoaderData();
-    const [carts, setCarts] = useState('');
+    const [carts, setCarts] = useState([]);
 
     useEffect(() => {
         const storedCarts = getStoredItems();
@@ -16,8 +16,8 @@ const Cart = () => {
             const findCart = data.filter(item => storedCarts.includes(item.id))
             setCarts(findCart)
         }
-    }, [data])
-    console.log(carts)
+    }, [data.length])
+
 
     if (loading) {
         return <div className='flex justify-center items-center h-screen'>
@@ -30,7 +30,7 @@ const Cart = () => {
             <Navbar></Navbar>
             <div className='grid grid-cols-1 lg:grid-cols-2'>
                 {
-                    carts.map(cart =>
+                    carts?.map(cart =>
                         <div className='w-5/6 my-10 mx-auto shadow-xl rounded-lg' key={cart.id}>
 
                             <img className='w-full' src={cart.image_url} alt="" />
