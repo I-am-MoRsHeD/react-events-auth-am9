@@ -8,12 +8,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD0N7lBS-e99orShNoPBOGlr8N_5XI18Sc",
-  authDomain: "react-events-auth-am9.firebaseapp.com",
-  projectId: "react-events-auth-am9",
-  storageBucket: "react-events-auth-am9.appspot.com",
-  messagingSenderId: "1095005093667",
-  appId: "1:1095005093667:web:2a3c2c5cf7da567d6c5696"
+  apiKey: import.meta.envVITE_APIKEY,
+  authDomain: import.meta.envVITE_AUTHDOMAIN,
+  projectId: import.meta.envVITE_PROJECTID,
+  storageBucket: import.meta.envVITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.envVITE_MESSAGINGSENDERID,
+  appId: import.meta.envVITE_APPID,
 };
 
 // Initialize Firebase
